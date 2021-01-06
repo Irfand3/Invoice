@@ -1,0 +1,227 @@
+
+body{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+}
+.Rectangle {
+        width: 373px;
+        height: 455px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
+        background-color: #ffffff;
+        
+}
+
+      .Log-in-to-ACCOUNT {
+        width: 239px;
+        height: 29px;
+        margin: 34px 50px 50px 0;
+        font-family: Montserrat;
+        font-size: 24px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #2c2c2c;
+      }
+      .Email {
+        width: 45px;
+        height: 19px;
+        margin: 0px 244px 6px 0;
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #2c2c2c;
+      }
+      .EmailInput {
+        width: 289px;
+        height: 42px;
+        margin: 6px 0 17px;
+        padding: 11px 131px 12px 14px;
+        border-radius: 8px;
+        border: solid 1px #979797;
+        box-sizing: border-box;
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #2c2c2c;
+
+      }
+
+      .Password {
+        width: 79px;
+        height: 19px;
+        margin: 0 207px 6px 2px;
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #2c2c2c;
+      }
+      .InputPassword {
+        width: 288px;
+        height: 42px;
+        margin: 6px 0 0;
+        padding: 12px 140px 11px 14px;
+        border-radius: 8px;
+        border: solid 1px #979797;
+        box-sizing: border-box;
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #2c2c2c;
+      } 
+
+.loginButton{
+        width: 152px;
+        height: 36px;
+        margin: 0 0 0 0;
+        padding: 8px 34px 7px 35px;
+        border-radius: 4px;
+        background-color: #ee7203;
+        border: 0px    
+}
+
+.background{
+margin: 0;
+padding: 0;
+width: 100%;
+height: 100%;
+}
+
+.background-image{
+        background-image: url("../../assets/loginBackground.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size:cover;
+        height: 100vh;
+        width: 100%;
+}
+
+.remmeberLogin{
+        width: 13px;
+        height: 13px;
+        margin: 3px 9px 2px 0;
+        border-radius: 2px;
+        border: solid 2px #b8c2cc;
+        text-align: left;
+      
+}
+.rememberMe{
+    
+        width: 221px;
+        height: 18px;
+        margin: 0 0 0 9px;
+        font-family: Rubik;
+        font-size: 15px;
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.4;
+        letter-spacing: normal;
+        color: #565656;
+        
+      
+}
+.checkBox{
+        width: 17px;
+        height: 17px;
+        margin: 6.5px 12px 8.5px 0;
+        border-radius: 3px;
+        border: solid 1px #999999;
+}
+.keepMeLoggedIn{
+margin: 0 0 0 12px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: normal;
+  color: #2c2c2c;
+}
+.loginButton{
+        width: 288px;
+        height: 42px;
+        margin: 17px 1px 9px 0;
+        padding: 11px 82px 12px 83px;
+        border-radius: 8px;
+        background-color: #1dcf77;     
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+}
+.googleLogin{
+       
+        width: 288px;
+        height: 42px;
+        margin: 0px 0px 0 0;
+        padding: 5px 55px 5px 18px;
+        border-radius: 8px;
+        border: solid 2px #cfcfcf;
+        background-color: #ffffff;
+        display: flex;
+justify-content: center;
+align-items: center;
+
+              
+}
+.googleLoginText{
+
+        
+        
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #000000;
+        font-weight: bold;
+        margin: 7px 0px 6px 6px;
+        
+
+}
+.googleLoginImg{
+  width: 32px;
+  height: 32px;
+  margin: 0 0 0 0;
+  object-fit: contain;
+ 
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+

@@ -1,0 +1,13 @@
+.clientPanelContainer{
+    width: 90% ;
+    margin: 0 auto ;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+.vertical{
+    width: 1px;
+    height: 32px;
+    margin-left: 22px;
+    margin-right: 17px;
+    border-left: solid 1px #979797;
+}

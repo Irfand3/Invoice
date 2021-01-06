@@ -1,0 +1,20 @@
+.addInvoiceCard{
+    width: 1170px;
+  height: 590px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
+  background-color: #ffffff;
+}
+.saveInvoice{
+width: 248px;
+  height: 42px;
+  border: none;
+  border-radius: 8px;
+  background-color: #1dcf77;
+}
+@media screen and (max-width: 1600px) {
+    .addInvoiceCard{
+     width: 90%;
+     height: 500px;
+    }
+}

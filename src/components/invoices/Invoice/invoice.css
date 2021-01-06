@@ -1,0 +1,49 @@
+.listText{
+  font-family: HelveticaNeue;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #373a3c;
+}
+
+
+.clientEditButton{
+  width: 156px;
+  height: 45px;
+  border-radius: 8px;
+  background-color: #1dcf77;
+  color: white;
+  border: none;
+  
+}
+.listItem{
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+}
+
+.flexRowCol{
+  display: flex;
+  flex-direction: row;  
+}
+
+@media screen and (max-width: 1600px) {
+ .listItem{
+   width: 125px;
+   height: 50px;
+ }
+ .listText{
+  font-family: HelveticaNeue;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #373a3c;
+ }
+
+}

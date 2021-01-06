@@ -1,0 +1,127 @@
+.card{
+  width: 1170px;
+  height: 590px;
+  border: 1px solid black;
+  /*will be deleted margins*/
+  
+  border-radius: 8px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
+  background-color: #ffffff;
+  border: none;
+}
+
+.addClientHeading{
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #2c2c2c;  
+  
+}
+
+.contentContainer{
+    width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.addClientSubheading{
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #999999;
+  margin-top: 5px;
+}
+
+.formHeadings{
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c2c2c;
+}
+
+.addClientInput{
+  width: 500px;
+  height: 42px;
+  border-radius: 8px;
+  border: solid 1px #979797;
+  margin-top: 6px;
+  font-family: Montserrat;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c2c2c;
+    outline: none;
+    padding:2px 10px 2px 10px;
+    box-sizing: border-box;
+}
+
+.addNotesInput{
+    width: 500px;
+  height: 42px;
+  border-radius: 8px;
+  border: solid 1px #979797;
+  margin-top: 6px;
+  font-family: Montserrat;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c2c2c;
+    outline: none;
+    padding:2px 10px 2px 10px;
+    line-height: 0px;
+}
+
+.saveButton{
+    width: 248px;
+    height: 42px;
+    border-radius: 8px;
+    background-color: #1dcf77;
+    border: none;
+    margin-top: 132px;
+    float: right;
+}
+.row{
+    display: flex;
+    margin-top: 30px;
+}
+.col{
+    width: 500px;
+    height: 225px;
+}
+
+
+
+@media screen and (max-width: 1600px) {
+    .card {
+    width: 90%;
+    height: 550px;
+    }
+    .addClientInput{
+        width: 90%;
+        height: 42px;
+        box-sizing: border-box;
+        
+    }
+    .addNotesInput{
+        width: 90%;
+        height: 223px;
+    }
+  }

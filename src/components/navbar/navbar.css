@@ -1,0 +1,101 @@
+.menu{
+    width: 278px;
+    min-height: 100vh;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.17);
+    background-color: #ffffff;
+}
+
+.title{
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.67;
+  letter-spacing: normal;
+  color: #2c2c2c;
+  padding-top: 12px;
+}
+
+
+.dashboardButton{
+  width: 236px;
+  height: 36px;
+  margin: 12px 0 4px;
+  border-radius: 4px;
+  background-color: #ececec;
+  border: none;
+  display: flex;
+justify-content: left;
+align-items: center;
+}
+
+.addInvoiceClientButton{
+  width: 236px;
+  height: 36px;
+  margin: 4px 0 6px;
+  border-radius: 4px;
+  box-shadow: -1px 1px 8px 0 rgba(47, 31, 71, 0);
+  background-color: #1dcf77;
+  border: none;
+  color: white;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.addInvoiceClientButtonText{
+  margin-left: 10px;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.plusCircle{
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.contentTitle{
+  margin-top: 10px;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  color: #999999;
+}
+
+.list{
+  margin-left:8.9px;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.57;
+  letter-spacing: normal;
+  color: #2c2c2c;
+  list-style: none;
+
+}
+.listItem{
+ display: flex;
+justify-content: left;
+align-items: center;
+}
+
+.userPin{
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  float: left;
+  margin-right: 11px;
+  
+}
+

@@ -1,0 +1,97 @@
+.panelContainer{
+    width: 90%;
+    margin:0 auto
+}
+.invoicesHeader{
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #2c2c2c;
+}
+.vertical{
+ width: 1px;
+  height: 32px;
+  margin-left: 22px;
+  margin-right: 17px;
+  border-left: solid 1px #979797;
+}
+
+.filterButton{
+ font-family: Montserrat;
+ font-size: 12px;
+ font-weight: bold;
+ font-stretch: normal; 
+ font-style: normal;
+ line-height: normal;
+ letter-spacing: normal;
+ text-align: center;
+  margin: 0 13px 0 0;
+  padding: 6px 30px 6px;
+  border-radius: 8px;
+  border: solid 2px #1dcf77;
+  background-color: white;
+  color:#1dcf77 ;
+}
+
+.filterButton:focus{
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal; 
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+     margin: 0 13px 0 0;
+     padding: 6px 30px 6px;
+     border-radius: 8px;
+     border: solid 2px #1dcf77;
+     background-color: rgba(29, 207, 119, 0.5);
+     color: white;
+    outline: none;
+   }
+
+.filters{
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+.InvoicesActive{
+    font-family: Montserrat;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #1dcf77;
+  text-align: center;
+  justify-content: center;
+  line-height: 34px;
+  margin-left: 11px;
+}
+
+.pageNumber{
+    list-style: none;
+    width: 41px;
+    height: 35px;
+    border: solid 1px #cccccc;
+    background-color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+}
+.pageNumberContainer{
+  display: flex;
+  margin-top: 45px;
+}
+
+@media screen and (max-width: 1600px) {
+  .pageNumberContainer{
+    margin-top: 10px;
+    display: flex
+  }
+ }

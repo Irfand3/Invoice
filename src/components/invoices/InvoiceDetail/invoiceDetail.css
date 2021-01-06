@@ -1,0 +1,87 @@
+.invoiceDetailCard{
+    margin-left:90px;
+    width: 371px;
+    height: 436px;
+    padding: 26px 18px 26px 23px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
+    background-color: #ffffff;
+  }
+  
+.invoiceDetailEdit{
+    width: 100%;
+  height: 45px;
+  border-radius: 8px;
+  background-color: #1dcf77;
+  border: none;
+  color: white;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+
+}
+.invoiceDetailCardTitle{
+    font-family: HelveticaNeue;
+    font-size: 24px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.28;
+    letter-spacing: normal;
+    color: #373a3c;
+}
+.invoiceDetailCardSubTitle{
+  margin-top: 24px;
+  margin-bottom: 20px;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #999999;
+}
+
+.clientDetailsText{
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #2c2c2c;
+}
+.paymentDetails{
+    margin-top: 13px;
+    margin-bottom: 13px;
+    display: flex;
+    justify-content: space-between;
+    font-family: Montserrat;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #2c2c2c;
+}
+
+
+@media screen and (max-width: 1600px) {
+ .invoiceDetailCard{
+  margin-left:20px;
+  width: 350px;
+  height: 436px;
+  padding: 26px 18px 26px 23px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
+  background-color: #ffffff;
+}
+}
