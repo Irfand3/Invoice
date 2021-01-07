@@ -1,6 +1,7 @@
 import {call, put, takeLatest} from 'redux-saga/effects'
 import {REGISTER_USER_REQUEST, REGISTER_USER_SUCCESS, REGISTER_USER_FAIL, SET_USER_TO_REGISTER_NULL} from "../../../actions/types"
 import history from "../../../history"
+import axios from "axios"
 
 function* handleRegisterUser(action){
    try { 
