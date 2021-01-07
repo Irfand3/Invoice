@@ -17,6 +17,7 @@ function* handleRegisterUser(action){
          } 
          else
          {
+            
             yield put({type:REGISTER_USER_FAIL, payload:"Email already taken"})
          }
         
