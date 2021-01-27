@@ -2,8 +2,6 @@
   width: 1170px;
   height: 590px;
   border: 1px solid black;
-  /*will be deleted margins*/
-  
   border-radius: 8px;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
   background-color: #ffffff;
@@ -19,7 +17,6 @@
   line-height: normal;
   letter-spacing: normal;
   color: #2c2c2c;  
-  
 }
 
 .contentContainer{
@@ -59,30 +56,32 @@
   margin-top: 6px;
   font-family: Montserrat;
     font-size: 14px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
     color: #2c2c2c;
     outline: none;
     padding:2px 10px 2px 10px;
     box-sizing: border-box;
 }
+.addClientInput2{
+    width: 215px;
+    height: 42px;
+    border-radius: 8px;
+    border: solid 1px #979797;
+    margin-top: 6px;
+    font-family: Montserrat;
+    font-size: 14px;
+    color: #2c2c2c;
+    outline: none;
+    box-sizing: border-box;
+}
 
 .addNotesInput{
     width: 500px;
-  height: 42px;
-  border-radius: 8px;
-  border: solid 1px #979797;
-  margin-top: 6px;
-  font-family: Montserrat;
+    height: 42px;
+    border-radius: 8px;
+    border: solid 1px #979797;
+    margin-top: 6px;
+    font-family: Montserrat;
     font-size: 14px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
     color: #2c2c2c;
     outline: none;
     padding:2px 10px 2px 10px;

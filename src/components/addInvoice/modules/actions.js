@@ -1,11 +1,12 @@
-import {CREATE_INVOICE_REQUEST} from "../../../actions/types"
-
-export const createNewInvoice = (invoice) => {
-    return (dispatch) => {
-        dispatch({
-            type:CREATE_INVOICE_REQUEST,
-            payload:invoice
-        })
-    }
+export const types =  {
+    ADD_CLIENT_AND_INVOICE: "ADD_CLIENT_AND_INVOICE"
 }
+
+export const createClientAndInvoice = (client, invoice) => ({
+    type: types.ADD_CLIENT_AND_INVOICE,
+    payload:{
+        client,
+        invoice
+    }
+})
 

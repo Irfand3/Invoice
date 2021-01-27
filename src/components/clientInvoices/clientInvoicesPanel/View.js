@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import ClientInvoiceDetails from "../clientInvoicesDetails/ClientInvoicesDetails"
 import ClientInvoicesList from "../clientInvoicesList/ClientInvoicesList"
 import {useParams} from "react-router-dom"
+import history from '../../../history'
 
 const ClientInvoicesPanel = (props) => {
 
@@ -13,28 +14,29 @@ const ClientInvoicesPanel = (props) => {
 
     var pageNumber = []
     for(var i=0; i<numberOfPages; i++){
-        pageNumber.push(<li key={i} className="pageNumber" value={i+1} onClick={(e) => actions.setCurrentPage(e.target.value)}>{i+1}</li>)
+        pageNumber.push(<li key={i} className="pageNumber" value={i+1} onClick={(e) => actions.setCurrentPageClientInvoices(e.target.value)}>{i+1}</li>)
     }
 
     const [filterValue, setFilterValue] = useState("All") 
 
     useEffect(()=>{
-        actions.setCurrentPage(1)
+        actions.setCurrentPageClientInvoices(1)
     },[invoices,allInvoices])
 
     const onFilterButton = (query) => {
+        console.log(clientDetail.client_id)
         setFilterValue(query)
         //set query as boolean value
         if (query=="Unpaid"){query=false} else{query=true}
-        actions.getClientInvoices(clientDetail.name)
-        actions.searchClientInvoices(query)
-        actions.setCurrentPage(1)
+        actions.getAllClientInvoices(clientDetail.client_id)
+        actions.searchClientInvoices(query, clientDetail.client_id)
+        actions.setCurrentPageClientInvoices(1)
     }
 
     const onGetAll = () =>{
         setFilterValue("All")
-        actions.getClientInvoices(clientDetail.name)
-        actions.setCurrentPage(1)
+        actions.getAllClientInvoices(clientDetail.client_id)
+        actions.setCurrentPageClientInvoices(1)
     }
 
     return (
@@ -70,6 +72,7 @@ const ClientInvoicesPanel = (props) => {
                         invoice={invoice} 
                         currentPage={currentPage}
                         company={clientDetail.company} 
+                        clientDetail={clientDetail}
                         index={i} />
                         </li>)
                 }

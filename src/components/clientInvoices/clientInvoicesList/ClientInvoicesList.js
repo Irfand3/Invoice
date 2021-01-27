@@ -2,20 +2,19 @@ import React from 'react'
 import trash from "../../../assets/trash.png"
 const ClientInvoicesList = (props) => {
 
-    const {actions,invoice, company, index} = props
-    const dateArray = invoice.dueTo.split("T")
+    const {actions,invoice, company, index, clientDetail} = props
+    const dateArray = invoice.dueto.split("T")
     const date = dateArray[0]
-
-   const onDelete = (invoice) => {
+    
+   const onDelete = (invoice, client) => {
        try {
-           actions.deleteInvoice(invoice)
-           alert("Invoice deleted")
-           const client = {
-               company:company
-           }
+           console.log(invoice.invoice_id)
+           console.log(client.client_id)
+           actions.deleteInvoice(invoice.invoice_id,client.client_id)
            
-           if (invoice.paidStatus === false) {
-                actions.setClientTotalAmountMinus(invoice.amount, client)
+           if (invoice.paidstatus === false) {
+               
+                actions.setClientTotalAmount(invoice.amount, client.client_id, "-")
            }
            
        } catch (error) {
@@ -29,13 +28,13 @@ const ClientInvoicesList = (props) => {
            <div className="listItem">{invoice.amount}</div>
            <div className="listItem">{date}</div>
            {
-               (invoice.paidStatus === true ? <div className="listItem paid">Paid</div> : <div className="listItem unpaid">Unpaid</div>)
+               (invoice.paidstatus === true ? <div className="listItem paid">Paid</div> : <div className="listItem unpaid">Unpaid</div>)
            }
            {
-               (invoice.paidStatus === false ? <div className="listItem markAsPaidButton" onClick={() => actions.setMark(invoice)}>Mark as paid</div> : <div style={{visibility:"hidden"}} className="listItem markAsPaidButton"></div>)
+               (invoice.paidstatus === false ? <div className="listItem markAsPaidButton" onClick={() => actions.setMark(invoice, clientDetail)}>Mark as paid</div> : <div style={{visibility:"hidden"}} className="listItem markAsPaidButton"></div>)
            }
            
-           <div className="listItem trash"><img  onClick={() => onDelete(invoice)}  src={trash} style={{width:"24px", height:"24px", objectFit:"contain"}}></img></div>
+           <div className="listItem trash"><img  onClick={() => onDelete(invoice, clientDetail)}  src={trash} style={{width:"24px", height:"24px", objectFit:"contain"}}></img></div>
         </div>
 
         

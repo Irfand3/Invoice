@@ -12,18 +12,17 @@ const Clients = (props) => {
     const user = JSON.parse(localStorage.getItem('userInfo'))
 
     useEffect(() => {
-        
         if(!user){
             history.push('/login')
         }
     });
     return (
-        <div className="flex-container">
+        <div className="flex-container" style={{backgroundColor:"#f9f9f9"}}>
             <div>
                 <Navbar></Navbar>
             </div>
-            <div style={{width:"100%", backgroundColor:"#f9f9f9"}}>
-                <Search></Search>
+            <div style={{width:"100%"}}>
+                <Search></Search> 
                 <ClientPanel actions={actions} invoices={invoices} clients={clients} currentPage={currentPage}></ClientPanel>
             </div>
         </div>

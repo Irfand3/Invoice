@@ -17,6 +17,9 @@
   padding-top: 12px;
 }
 
+.activeLink{
+  color: #1dcf77;
+}
 
 .dashboardButton{
   width: 236px;

@@ -1,8 +1,9 @@
 import React from 'react'
 import "./navbar.css"
-import plusCircle from "../../assets/plusCircle.png"
-import userPin from "../../assets/user-pin.png"
-import {Link} from "react-router-dom"
+import plusCircle from "../../assets/plus-circle.png"
+import userPin from "../../assets/userPin.png"
+import Invoices from "../../assets/Invoices.png"
+import {Link, NavLink} from "react-router-dom"
 
 const Navbar = (props) => {
 
@@ -10,11 +11,11 @@ const Navbar = (props) => {
 
     const OnGetAllInvoices = () => {
         
-        actions.getAllInvoices()
-        actions.setCurrentPage(1)
+        actions.getInvoices()
+        actions.setCurrentPageInvoice(1)
     }
     const OnGetAllClients = () => {
-        actions.getAllClients()
+        actions.getClients()
         actions.setCurrentPage(1)
     }
 
@@ -30,8 +31,8 @@ const Navbar = (props) => {
             
             <div className="list">
                 <li className="contentTitle">CONTENT</li>
-                <Link to="/invoices" style={{textDecoration:"none", color:"#2c2c2c"}} ><li onClick={OnGetAllInvoices} className="listItem">Invoices</li></Link>
-                <Link to="/clients"  style={{textDecoration:"none", color:"#2c2c2c"}} ><li onClick={OnGetAllClients} className="listItem"><img src={userPin} className="userPin"></img>Clients</li></Link>
+                <NavLink to="/invoices" activeStyle={{color: '#1dcf77'}} style={{textDecoration:"none", color:"#2c2c2c"}} ><li onClick={OnGetAllInvoices} className="listItem"><img src={Invoices} className="userPin"></img>Invoices</li></NavLink>
+                <NavLink to="/clients" activeStyle={{color: '#1dcf77'}} style={{textDecoration:"none", color:"#2c2c2c"}} ><li onClick={OnGetAllClients} className="listItem"><img src={userPin} className="userPin"></img>Clients</li></NavLink>
                   
             </div> 
         </div>

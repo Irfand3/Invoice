@@ -1,8 +1,9 @@
 import { connect } from 'react-redux'
-import {createNewInvoice} from "./modules/actions"
-import {setClientTotalAmount} from "../../actions/clientActions"
-import {saveClient} from "../../components/addClient/modules/actions"
+import {addInvoice} from "../invoices/modules/actions"
+import {setClientTotalAmount} from "../clients/modules/actions"
+import {addNewClient} from "../clients/modules/actions"
 import { bindActionCreators } from 'redux';
+import {createClientAndInvoice} from "./modules/actions"
 
 const mapStateToProps = state => ({
     clients:state.client.clients,
@@ -11,9 +12,10 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     actions: bindActionCreators(
       {
-        createNewInvoice,
-        saveClient,
-        setClientTotalAmount
+        addInvoice,
+        addNewClient,
+        setClientTotalAmount,
+        createClientAndInvoice,
       },
       dispatch,
     ),

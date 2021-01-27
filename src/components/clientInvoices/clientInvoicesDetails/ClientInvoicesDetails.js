@@ -10,7 +10,7 @@ const ClientInvoicesDetails = (props) => {
            <div className="invoiceDetailCardTitle">Client Details</div>
            <div className="invoiceDetailCardSubTitle">Client Details</div>
            <div className="clientDetailsText">
-              {(clientDetail.name === undefined ? <p>Client name</p> : <p>{clientDetail.name}</p>) }
+              {(clientDetail.client_name === undefined ? <p>Client name</p> : <p>{clientDetail.client_name}</p>) }
                {(clientDetail.company === undefined ? <p>Company name</p> : <p>{clientDetail.company}</p>) }
                {(clientDetail.companyId === undefined ? <p>Company id</p> : <p>{clientDetail.companyId}</p>) }
           </div>

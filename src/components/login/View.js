@@ -2,7 +2,7 @@ import React,{useState, useEffect} from 'react'
 import './login.css'
 import { useHistory } from "react-router-dom";
 import googleButton from '../../assets/googleButton.png'
-import { loginUser } from './modules/actions';
+
 
 
 const Login = (props) => {
@@ -14,7 +14,7 @@ const Login = (props) => {
     const user = JSON.parse(localStorage.getItem('userInfo'))
 
     useEffect(() => {
-        //if user is already logged in, redirect to home page
+        
         if(user){
             history.push('/invoices')
         }
@@ -36,10 +36,10 @@ const Login = (props) => {
     return (
         <div>
             <div className="background-image" align="center">
-            {loginUser.error && <div className="alert alert-danger">{loginUser.error}</div>}
+            
             <div className="Rectangle centered">
             <div className="container">
-            <div class="Log-in-to-ACCOUNT">
+            <div className="Log-in-to-ACCOUNT">
                 Log in to ACCOUNT
             </div>
             <div className="Email">

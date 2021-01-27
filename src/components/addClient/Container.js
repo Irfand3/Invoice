@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import {saveClient} from "./modules/actions"
+import {addNewClient} from "../clients/modules/actions"
 import { bindActionCreators } from 'redux';
 
 const mapStateToProps = state => ({
@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     actions: bindActionCreators(
       {
-        saveClient,
+        addNewClient,
       },
       dispatch,
     ),

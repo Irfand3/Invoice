@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { hot } from 'react-hot-loader/root'
-import {Provider} from 'react-redux'
+import {Provider, useDispatch} from 'react-redux'
 import store from './store'
 import Register from './components/register'
 import history from './history'
-import {Router, Route, Link, Switch} from 'react-router-dom'
+import {Router, Route, Link, Switch, Redirect} from 'react-router-dom'
 import Login from "./components/login"
 import Invoices from './components/invoices'
 import AddInvoice from './components/addInvoice'
@@ -13,8 +13,19 @@ import Clients from "./components/clients"
 import ClientInvoices from './components/clientInvoices'
 import AddClient from "./components/addClient"
 import Dashboard from './components/dashboard/View'
+import {loginUserSuccess,loggedUser} from "./actions/auth"
+import {getInvoices} from "./components/invoices/modules/actions"
+import {getClients} from "./components/clients/modules/actions"
 
 const App = () => {
+    
+    useEffect(() => {
+        if (localStorage.getItem('userInfo')) {
+            store.dispatch(loggedUser())
+            store.dispatch(getInvoices())
+            store.dispatch(getClients())
+        }
+    }, [])
     return (
         <Provider store={store}> 
             <Router history={history}>

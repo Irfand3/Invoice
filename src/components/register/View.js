@@ -1,16 +1,15 @@
 import React, {useEffect, useState} from 'react'
 import { useHistory } from "react-router-dom";
 import "../login/login.css"
+import {useForm} from "react-hook-form"
+import {notification} from "antd"
 
 const Register = (props) => {
 
     const {actions, registerUser} = props
-    console.log(registerUser)
     const history = useHistory()
-    const [userToRegisterName, setUserToRegisterName] = useState('')
-    const [userToRegisterEmail, setUserToRegisterEmail] = useState('')
-    const [userToRegisterPassword, setUserToRegisterPassword] = useState('')
     
+    const {register, errors, handleSubmit} = useForm()
 
     const user = JSON.parse(localStorage.getItem("userInfo"))
     
@@ -18,68 +17,55 @@ const Register = (props) => {
         if(user){
             history.push('/invoices')
         }
-    });
+    },[]);
 
-    
-    const handleRegister = (e) => {
-
-        e.preventDefault()
-        let isValid = false
-        if (userToRegisterEmail === '' || userToRegisterName === '' || userToRegisterPassword === '') {
-        }
-        var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-
-        if (pattern.test(userToRegisterEmail)) {
-              isValid = true;
-              try {
-                const user = {
-                    email:userToRegisterEmail,
-                    name:userToRegisterName,
-                    password:userToRegisterPassword
-                }
-                actions.registerUser(user)
-                
-            }
-            catch (error) {
-                console.log(error)            
-            } 
-        }
-        else
-        {
-            alert("Invalid fields")
-        }
-        
+    const onSubmit = (data) => {
+        actions.registerUser(data)
     }
+    
 
     return (
         <div>
         <div className="background-image" align="center">
-        {registerUser.error && <div className="alert alert-danger">{registerUser.error}</div>}
+       
         <div className="Rectangle centered">
         <div className="container">
         <div className="Log-in-to-ACCOUNT">
             Register Account
         </div>
-        <form onSubmit={handleRegister}>
+        <form onSubmit={handleSubmit(onSubmit)}>
         <div className="Email">
 
             Ime
             </div>
-            <input type="text" name="name" className="EmailInput" placeholder="Unesite Ime" onChange={ e => setUserToRegisterName(e.target.value)}/>
+            <input type="text" name="name" className="EmailInput" placeholder="Unesite Ime" 
+            ref={ register({required: true })} />
+            {errors.name && notification.error({
+            message:"Register User Fail",
+            description:"Name field is required!"
+            })}
             <div className="Email">
             Email
             </div>
-            <input type="text" name="email" className="EmailInput" placeholder="Unesite Email" onChange={ e => setUserToRegisterEmail(e.target.value)}/>
+            <input type="text" name="email" className="EmailInput" placeholder="Unesite Email"
+            ref={ register({required: true, pattern: /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i})} />
+             {errors.email && notification.error({
+            message:"Register User Fail",
+            description:"Email field is required or invalid!"
+            })}
             <div className="Password">
             Password
             </div>
-            <input type="password" name="password" className="InputPassword" placeholder="Input Password" onChange={ e => setUserToRegisterPassword(e.target.value)}/>
+            <input type="password" name="password" className="InputPassword" placeholder="Input Password"
+            ref={ register({required: true })}/>
+             {errors.password && notification.error({
+            message:"Register User Fail",
+            description:"Password field is required!"
+            })}
             <br></br>
             <div style={{marginTop:"10px"}}>
             </div>
             <button className="loginButton">Register</button>
-            
-            
         </form>
         </div> 
         </div>

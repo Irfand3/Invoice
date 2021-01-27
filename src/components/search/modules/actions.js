@@ -1,18 +1,23 @@
-import {SEARCH_CLIENT_REQUEST, SEARCH_INVOICES_REQUEST} from "../../../actions/types"
-export const searchClient = (client) => {
-    return (dispatch) => {
-        dispatch({
-            type:SEARCH_CLIENT_REQUEST,
-            payload:client
-        })
-    }
+export const types = {
+    SEARCH_CLIENT : "SEARCH_CLIENT",
+    SEARCH_INVOICE : "SEARCH_INVOICE",
+    SEARCH_CLIENT_INVOICES : "SEARCH_CLIENT_INVOICES"
 }
+export const searchClient = (query) => ({
+ type: types.SEARCH_CLIENT,
+ payload: query   
+})
 
-export const searchInvoice = (invoice) => {
-    return (dispatch) => {
-        dispatch({
-            type:SEARCH_INVOICES_REQUEST,
-            payload:invoice
-        })
-    }
-}
+export const searchInvoice = (query) => ({
+    type: types.SEARCH_INVOICE,
+    payload: query   
+})
+
+export const searchClientInvoices = (query, client) => ({
+    type: types.SEARCH_CLIENT_INVOICES,
+    payload: {
+        query,
+        client
+    }   
+})
+

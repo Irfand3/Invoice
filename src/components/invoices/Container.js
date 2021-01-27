@@ -1,6 +1,7 @@
 import {connect} from "react-redux"
 import { bindActionCreators } from 'redux';
-import {setCurrentPage, getAllInvoices} from './modules/actions'
+import {setCurrentPageInvoice, getAllInvoices} from './modules/actions'
+import {getInvoices} from "./modules/actions"
 import {searchInvoice} from '../search/modules/actions'
 
 const mapStateToProps = state => ({
@@ -11,8 +12,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     actions: bindActionCreators(
       {
-        setCurrentPage,
-        getAllInvoices,
+        setCurrentPageInvoice,
+        getInvoices,
         searchInvoice
       },
       dispatch,

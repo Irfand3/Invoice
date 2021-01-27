@@ -85,8 +85,10 @@
     line-height: 35px;
 }
 .pageNumberContainer{
-  display: flex;
-  margin-top: 45px;
+  position: absolute;
+  bottom: 10px;
+  width: 50%;
+
 }
 
 @media screen and (max-width: 1600px) {

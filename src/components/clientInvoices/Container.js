@@ -1,6 +1,8 @@
 import {connect} from "react-redux"
 import { bindActionCreators } from 'redux';
-import {getClientInvoices,setMark,deleteInvoice,setClientTotalAmount,setClientTotalAmountMinus, setCurrentPage, searchClientInvoices} from "./modules/actions"
+import {getAllClientInvoices,setMark,deleteInvoice, setCurrentPageClientInvoices} from "./modules/actions"
+import {searchClientInvoices} from "../search/modules/actions"
+import {setClientTotalAmount} from "../clients/modules/actions"
 
 const mapStateToProps = state => ({
     clients:state.client.clients,
@@ -13,12 +15,11 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     actions: bindActionCreators(
       {
-        getClientInvoices,
+        getAllClientInvoices,
         setMark,
         deleteInvoice,
         setClientTotalAmount,
-        setClientTotalAmountMinus,
-        setCurrentPage,
+        setCurrentPageClientInvoices,
         searchClientInvoices
       },
       dispatch,

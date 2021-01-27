@@ -6,12 +6,12 @@ export default function exportPDF(invoices){
     const size = "A4";
     const orientation = "portrait";
     const title = "Invoice Table";
-    const headers = [["#", "Client Name", "Company Name", "Company ID", "Due by", "Amount to pay"]];
+    const headers = [["#", "Client Name", "Company Name", "Invoice ID", "Due by", "Amount to pay"]];
 
     const marginLeft = 40;
     const doc = new jsPDF(orientation, unit, size);
     doc.setFontSize(15);
-    const data = invoices.map((invoice,i)=> [invoice.i, invoice.client,invoice.company,invoice.companyId,invoice.dueTo,invoice.amount]);
+    const data = invoices.map((invoice,i)=> [invoice.i, invoice.client,invoice.company,invoice.invoice_id,invoice.dueto.split('T')[0],invoice.amount]);
     let content = {
         startY: 50,
         head: headers,

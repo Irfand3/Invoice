@@ -1,61 +1,46 @@
-import {GET_CLIENT_INVOICES_REQUEST,SET_PAID_REQUEST,DELETE_INVOICE_REQUEST,SEARCH_CLIENTINVOICES_REQUEST, SET_TOTAL_AMOUNT_REQUEST,SET_TOTAL_AMOUNT_MINUS_REQUEST, SET_CURRENT_PAGE} from "../../../actions/types"
+export const types = {
+    GET_CLIENT_INVOICES : "GET_CLIENT_INVOICES",
+    SET_CLIENT_INVOICES : "SET_CLIENT_INVOICES",
+    SET_CURRENT_PAGE : "SET_CURRENT_PAGE",
+    SET_CURRENT_CLIENT : "SET_CURRENT_CLIENT",
+    DELETE_CLIENT_INVOICE : "DELETE_CLIENT_INVOICE",
+    SET_INVOICE_PAID : "SET_INVOICE_PAID"
+}
+export const getAllClientInvoices = (client) => ({
+    type: types.GET_CLIENT_INVOICES,
+    payload: client
+})
 
-export const getClientInvoices = (client) => {
-    return (dispatch) => {
-        dispatch({
-            type:GET_CLIENT_INVOICES_REQUEST,
-            payload:client
-        })
-    }
-}
-export const setMark = (invoice) => {
-    return (dispatch) => {
-        dispatch({
-            type:SET_PAID_REQUEST,
-            payload:invoice
-        })
-    }
-}
-export const deleteInvoice = (invoice) => {
-    return (dispatch) => {
-        dispatch({
-            type:DELETE_INVOICE_REQUEST,
-            payload:invoice
-        })
-    }
-}
-export const setClientTotalAmount = (amount, client) => {
-    return (dispatch) => {
-        dispatch({
-            type:SET_TOTAL_AMOUNT_REQUEST,
-            payload:{amount, client}
-        })
-    }
-} 
+export const setClientInvoices = (invoices) => ({
+    type: types.SET_CLIENT_INVOICES,
+    payload: invoices
+})
 
-export const setClientTotalAmountMinus = (amount, client) => {
-    return (dispatch) => {
-        dispatch({
-            type:SET_TOTAL_AMOUNT_MINUS_REQUEST,
-            payload:{amount, client}
-        })
-    }
-} 
+export const setCurrentClient = (client) => ({
+    type: types.SET_CURRENT_CLIENT,
+    payload:client
+})
 
-export const setCurrentPage = (page) => {
-    return (dispatch) => {
-        dispatch({
-            type:SET_CURRENT_PAGE,
-            payload:page
-        })
+export const deleteInvoice = (invoiceID, clientID) => ({
+    type: types.DELETE_CLIENT_INVOICE,
+    payload: {
+        invoiceID,
+        clientID
     }
-}
+    
+})
 
-export const searchClientInvoices = (invoice) => {
-    return (dispatch) => {
-        dispatch({
-            type:SEARCH_CLIENTINVOICES_REQUEST,
-            payload:invoice
-        })
+export const setMark = (invoice, client) => ({
+    type: types.SET_INVOICE_PAID,
+    payload:{
+        invoice,
+        client
     }
-}
+ })
+ 
+
+export const setCurrentPageClientInvoices = (page) => ({
+   type: types.SET_CURRENT_PAGE,
+   payload:page
+})
+

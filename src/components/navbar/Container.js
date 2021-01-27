@@ -1,14 +1,16 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
-import {getAllClients} from "../clients/modules/actions"
-import {getAllInvoices, setCurrentPage} from "../invoices/modules/actions"
-
+import {getClients} from "../clients/modules/actions"
+import {getAllInvoices, setCurrentPageInvoice} from "../invoices/modules/actions"
+import {setCurrentPage} from "../clients/modules/actions"
+import {getInvoices} from "../invoices/modules/actions"
 
 const mapDispatchToProps = (dispatch) => ({
     actions: bindActionCreators(
       {
-        getAllClients,
-        getAllInvoices,
+        getClients,
+        getInvoices,
+        setCurrentPageInvoice,
         setCurrentPage
       },
       dispatch,

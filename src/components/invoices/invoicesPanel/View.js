@@ -14,16 +14,14 @@ const InvoicesPanel = (props) => {
     const [month, setMonth] = useState(new Date)
     
     useEffect(() => {
-        actions.setCurrentPage(1)
+        actions.setCurrentPageInvoice(1)
     },[invoices]);
 
     //Number of pages of list
     const numberOfPages = Math.ceil(invoices.length / 8)
-    console.log("Number of pages:" + numberOfPages)
-    
     var pageNumber = []
     for(var i=0; i<numberOfPages; i++){
-        pageNumber.push(<li key={i} className="pageNumber" value={i+1} onClick={(e) => actions.setCurrentPage(e.target.value)}>{i+1}</li>)
+        pageNumber.push(<li key={i} className="pageNumber" value={i+1} onClick={(e) => actions.setCurrentPageInvoice(e.target.value)}>{i+1}</li>)
     }
 
     const onFilterButton = (query) => {
@@ -33,13 +31,13 @@ const InvoicesPanel = (props) => {
         else if(query=="Paid"){query=true}
         
         actions.searchInvoice(query)
-        actions.setCurrentPage(1)
+        actions.setCurrentPageInvoice(1)
     }
 
     const onGetAll = () =>{
         setFilterValue("All")
-        actions.getAllInvoices()
-        actions.setCurrentPage(1)
+        actions.getInvoices()
+        actions.setCurrentPageInvoice(1)
     }
 
     return (
@@ -56,7 +54,9 @@ const InvoicesPanel = (props) => {
            <button className="filterButton" value={"Unpaid"}  onClick={e => onFilterButton(e.target.value)}>UNPAID</button>
            <button className="filterButton" value={month.getMonth()+1 <10 ? ("0"+month.getMonth()+1).slice(-2) : month.getMonth()+1}  onClick={e => onFilterButton(e.target.value)}  >DUE THIS MONTH</button>
            <button className="filterButton" onClick={() => exportPDF(invoices)} >Export PDF</button>
-          <button className="filterButton"> <CSVLink style={{textDecoration:"none", color:"inherit"}} data={invoices}>Export CSV</CSVLink></button>
+          <button className="filterButton"> 
+          <CSVLink style={{textDecoration:"none", color:"inherit"}} data={invoices}>Export CSV</CSVLink>
+          </button>
         </div>
         <div className="flexRowCol">
         <div>
@@ -65,7 +65,7 @@ const InvoicesPanel = (props) => {
                    <div style={{width:"80px", height:"50px",lineHeight:"50px", paddingLeft:"12px"}} >#</div>
                    <div className="listItem">Client Name</div>
                    <div className="listItem">Company Name</div>
-                   <div className="listItem">Company ID</div>
+                   <div className="listItem">Invoice ID</div>
                    <div className="listItem">Due by</div>
                    <div className="listItem">Amount to pay</div>
                </div>}
@@ -85,13 +85,9 @@ const InvoicesPanel = (props) => {
            <div className="pageNumberContainer">
                {pageNumber}
            </div>
-           
-        {/*  */}
-       
+    
    </div>
     )
-
-
 }
 const listItemSelected = {
     backgroundColor:"#f9f9f9",

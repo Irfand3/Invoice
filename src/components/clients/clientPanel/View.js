@@ -14,16 +14,16 @@ const ClientPanel = (props) => {
     const numberOfPages = Math.ceil(clients.length / 8)
     var pageNumber = []
     for(var i=0; i<numberOfPages; i++){
-        pageNumber.push(<li key={i} className="pageNumber" value={i+1} onClick={(e) => setCurrentPage(e.target.value)}>{i+1}</li>)
+        pageNumber.push(<li key={i} className="pageNumber" value={i+1} onClick={(e) => actions.setCurrentPage(e.target.value)}>{i+1}</li>)
     }
 
-    const [clientDetail, setClientDetail] = useState({})
+    const [clientDetail, setClientDetail] = useState("")
     const [filterValue, setFilterValue] = useState("All")
 
     const onGetAll = (e) => {
         e.preventDefault()
         setFilterValue(e.target.value)
-        actions.getAllClients()
+        actions.getClients()
         actions.setCurrentPage(1)
     }
     return (
@@ -49,11 +49,9 @@ const ClientPanel = (props) => {
                         <div className="listItem">Client Name</div>
                         <div className="listItem">Company Name</div>
                         <div className="listItem">Company ID</div>
-                        <div className="listItem">Due by</div>
                         <div className="listItem">Amount to pay</div>
                     </div>}
                 {
-                    
                     currentPage.map((client, i) => 
                     <li style={client===clientDetail ? listItemSelected : listItem}
                      onClick={()=>setClientDetail(client)} key={i}>

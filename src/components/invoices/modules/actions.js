@@ -1,40 +1,30 @@
-import {CREATE_INVOICE_REQUEST, SEARCH_INVOICES_REQUEST,  SET_INVOICE_BACK, GET_ALL_INVOICES, SET_CURRENT_PAGE} from "../../../actions/types"
-
-export const getAllInvoices  = () => {
-    return (dispatch) => {
-        dispatch({
-            type:GET_ALL_INVOICES,
-        })
-    }
+export const types = {
+    GET_INVOICES : "GET_INVOICES",
+    SET_INVOICES : "SET_INVOICES",
+    SET_CURRENT_PAGE : "SET_CURRENT_PAGE",
+    ADD_INVOICE : "ADD_INVOICE"
 }
 
+export const getInvoices = () => ({
+    type: types.GET_INVOICES,
+})
 
-export const setInvoiceBack = () => {
-    return (dispatch) => {
-        dispatch({
-            type:SET_INVOICE_BACK,
-        })
-    }
-}
+export const setCurrentPageInvoice = (page) => ({
+    type: types.SET_CURRENT_PAGE,
+    payload:page
+})
+ 
+export const addInvoice = (invoice) => ({
+    type: types.ADD_INVOICE,
+    payload:invoice
+})
 
 
-export const setCurrentPage = (page) => {
-    return (dispatch) => {
-        dispatch({
-            type:SET_CURRENT_PAGE,
-            payload:page
-        })
-    }
-}
+export const setInvoices = (data) => ({
+    type: types.SET_INVOICES,
+    payload: data
+})
 
-export const createNewInvoice = (invoice) => {
-    return (dispatch) => {
-        dispatch({
-            type:CREATE_INVOICE_REQUEST,
-            payload:invoice
-        })
-    }
-}
 
 
 
